@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.example.common'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Lombok
+    compileOnly "org.projectlombok:lombok:1.18.30"
+    annotationProcessor "org.projectlombok:lombok:1.18.30"
+
+    // Spring Web (for @RestControllerAdvice, ResponseEntity, etc.)
+    implementation "org.springframework:spring-web:6.1.8"
+    implementation "org.springframework:spring-context:6.1.8"
+
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
